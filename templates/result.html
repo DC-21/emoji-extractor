@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extracted Images</title>
+  </head>
+  <body>
+    <h1>Extracted Images</h1>
+    {% for file in extracted_files %}
+    <div>
+      <img
+        src="{{ url_for('get_extracted_file', filename=file) }}"
+        alt="Extracted Image"
+      />
+    </div>
+    {% endfor %}
+    <a href="{{ url_for('home') }}">Upload another image</a>
+  </body>
+</html>
